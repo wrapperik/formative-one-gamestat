@@ -24,7 +24,7 @@ function Compare() {
           <div className="card mt-3">
             <div className="card-body">
               <h5 className="card-title">Gameplay Screenshots</h5>
-              <div id="carouselExampleControls1" className="carousel slide" data-ride="carousel">
+              <div id="carouselExampleIndicators" className="carousel slide" data-bs-ride="carousel">
                 <div className="carousel-inner">
                   <div className="carousel-item active">
                     <img src="https://via.placeholder.com/200" className="d-block w-100" alt="gameplay 1" />
@@ -59,7 +59,7 @@ function Compare() {
           <div className="card mt-3">
             <div className="card-body">
               <h5 className="card-title">Gameplay Screenshots</h5>
-              <div id="carouselExampleControls2" className="carousel slide" data-ride="carousel">
+              <div id="carouselExampleIndicators" className="carousel slide" data-bs-ride="carousel">
                 <div className="carousel-inner">
                   <div className="carousel-item active">
                     <img src="https://via.placeholder.com/200" className="d-block w-100" alt="gameplay 1" />

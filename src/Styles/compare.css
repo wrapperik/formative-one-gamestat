@@ -59,6 +59,15 @@
   background-color: #000;
 }
 
+.ratingChart{
+  width: 80%;
+  background-color: #0000005f;
+  color: #fff;
+  border-radius: 20px;
+  border: solid 0.5px rgba(133, 133, 133, 0.661);
+  padding: 20px; /* Add padding inside the card */
+}
+
 @media (max-width: 768px) {
   .compare-container {
     margin: 0 5%;

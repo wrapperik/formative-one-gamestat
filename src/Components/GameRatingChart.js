@@ -40,7 +40,7 @@ const GameRatingChart = () => {
   }, []);
 
   return (
-    <div className="card mt-3">
+    <div className="ratingChart mt-3">
       <div className="card-body">
         <h5 className="card-title">Game Rating</h5>
         <canvas ref={chartRef} />
