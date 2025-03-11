@@ -1,31 +1,34 @@
 import React, { useState } from 'react';
+import { Link, NavLink } from 'react-router-dom';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import '../Styles/navbar.css';
 
 function Navbar() {
-  const [activePage, setActivePage] = useState('home');
+  const [menuOpen, setMenuOpen] = useState(false);
 
-  const handleNavClick = (page) => {
-    setActivePage(page);
+  const toggleMenu = () => {
+    setMenuOpen(!menuOpen);
   };
 
   return (
-    <nav>
-      <div className="nav-wrapper">
-        <div className="progress-bar">
-          <div
-            className="progress-ball"
-            style={{
-              top: activePage === 'home' ? '20px' : activePage === 'compare' ? '61px' : '102px',
-            }}
-          ></div>
-        </div>
-        <div className="nav-items">
-          <h1><a onClick={() => handleNavClick('home')}>home</a></h1>
-          <h2><a onClick={() => handleNavClick('compare')}>compare</a></h2>
-          <h2><a onClick={() => handleNavClick('timeline')}>timeline</a></h2>
-        </div>
+    <>
+      <div className={`nav-wrapper ${menuOpen ? 'show' : ''}`}>
+        <ul>
+          <li>
+            <NavLink to="/" exact onClick={toggleMenu}>Home</NavLink>
+          </li>
+          <li>
+            <NavLink to="/compare" onClick={toggleMenu}>Compare</NavLink>
+          </li>
+          <li>
+            <NavLink to="/timeline" onClick={toggleMenu}>Timeline</NavLink>
+          </li>
+        </ul>
       </div>
-    </nav>
+      <button className="toggle-button" onClick={toggleMenu}>
+        {menuOpen ? 'X' : 'O'}
+      </button>
+    </>
   );
 }
 

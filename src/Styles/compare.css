@@ -1,0 +1,80 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
+.compare-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: top;
+  align-items: center;
+  min-height: 100vh; /* Full viewport height */
+  text-align: left;
+  position: absolute;
+  margin: 3% 20%;
+  font-family: 'Montserrat', sans-serif; /* Apply Montserrat font */
+}
+
+.compare-container h1 {
+  margin: 0;
+  padding: 10px;
+  color: white;
+}
+
+.compare-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between; /* Ensure items are spaced evenly */
+  align-items: flex-start;
+  width: 80%; /* Ensure the content takes up full width */
+  gap: 20px; /* Add gap between items */
+}
+
+.card-body {
+  padding: 20px;
+}
+
+.compare-item {
+  flex: 1 1 48%; /* Ensure items take up equal space and do not exceed half the container width */
+  max-width: 48%; /* Ensure items do not exceed half the container width */
+}
+
+.card {
+  background-color: #0000005f;
+  color: #fff;
+  border-radius: 20px;
+  border: solid 0.5px rgba(133, 133, 133, 0.661);
+  padding: 20px; /* Add padding inside the card */
+}
+
+.card .form-control {
+  background-color: #444;
+  color: #fff;
+  border: none;
+}
+
+.card .form-control::placeholder {
+  color: #bbb;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  background-color: #000;
+}
+
+@media (max-width: 768px) {
+  .compare-container {
+    margin: 0 5%;
+  }
+
+  .ratingChart {
+    width: 100%;
+  }
+
+  .compare-content {
+    width: 100%;
+    flex-direction: column; /* Stack items vertically on small screens */
+    gap: 10px; /* Add gap between items */
+  }
+
+  .compare-item {
+    max-width: 100%; /* Ensure items take up full width on small screens */
+  }
+}
