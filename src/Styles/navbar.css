@@ -100,3 +100,62 @@ li {
 
 
 
+@media (min-width: 992px) {
+    .navbar {
+        max-width: 20%;
+        height: 100vh;
+        position: fixed;
+        top: 0;
+        left: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 1rem;
+        background-color: #f8f9fa !important; /* Light background color */
+    }
+
+    .navbar-nav {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .nav-item {
+        width: 100%;
+        position: relative;
+    }
+
+    .nav-link {
+        width: 100%;
+        padding: 0.5rem 1rem;
+        color: #6c757d !important; /* Light gray color */
+        font-size: 1.25rem; /* Increase font size */
+        text-transform: capitalize; /* Capitalize text */
+    }
+
+    .nav-link.active {
+        color: #000 !important; /* Black color for active link */
+        font-weight: bold; /* Bold font for active link */
+    }
+
+    .nav-link.active::before {
+        content: '';
+        position: absolute;
+        left: -15px;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 10px;
+        height: 10px;
+        background-color: #000; /* Black color for the ball */
+        border-radius: 50%;
+    }
+
+    .progress-bar {
+        position: absolute;
+        left: -5px;
+        top: 0;
+        bottom: 0;
+        width: 5px;
+        background-color: #d3d3d3; /* Light gray color for the progress bar */
+    }
+}
