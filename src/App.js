@@ -8,6 +8,8 @@ import Compare from './Components/compare';
 import Home from './Components/home';
 import Timeline from './Components/timeline';
 
+
+
 function App() {
   return (
     <Router>

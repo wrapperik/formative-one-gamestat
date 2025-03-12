@@ -18,13 +18,13 @@
     border: 2px solid black;
     border-radius: 8px;
     outline: none;
-    background-color: #ffffff;
+    background-color: #ffffffba;
     color: #0d0c22;
     transition: .3s ease;
    }
    
    .input::placeholder {
-    color: #9e9ea7;
+    color: #000000;
    }
    
    .input:focus, input:hover {
@@ -36,7 +36,7 @@
    .icon {
     position: absolute;
     left: 1rem;
-    fill: #9e9ea7;
+    fill: #000000;
     width: 1rem;
     height: 1rem;
    }

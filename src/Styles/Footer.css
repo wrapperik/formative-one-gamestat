@@ -1,0 +1,42 @@
+.footer-container {
+  background: linear-gradient(to top, rgb(26, 37, 63), rgba(0, 0, 0, 0.5));
+  color: #fff;
+  padding: 20px;
+  border-top: solid 0.5px rgba(133, 133, 133, 0.661);
+  position: absolute;
+  bottom: 0px;
+  right: 0px;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+.footer-section {
+  flex: 1;
+  max-width: 30%;
+}
+
+.footer-section h4 {
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.footer-section p {
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .footer-content {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .footer-section {
+    max-width: 100%;
+    margin-bottom: 20px;
+  }
+}

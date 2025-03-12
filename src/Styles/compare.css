@@ -10,6 +10,7 @@
   position: absolute;
   margin: 3% 20%;
   font-family: 'Montserrat', sans-serif; /* Apply Montserrat font */
+
 }
 
 .compare-container h1 {
@@ -37,7 +38,7 @@
 }
 
 .card {
-  background-color: #0000005f;
+  background: linear-gradient(to top, rgb(26, 37, 63), rgba(0, 0, 0, 0.5));
   color: #fff;
   border-radius: 20px;
   border: solid 0.5px rgba(133, 133, 133, 0.661);
@@ -60,8 +61,8 @@
 }
 
 .ratingChart{
-  width: 80%;
-  background-color: #0000005f;
+  width: 78%;
+  background: linear-gradient(to top, rgb(26, 37, 63), rgba(0, 0, 0, 0.5));
   color: #fff;
   border-radius: 20px;
   border: solid 0.5px rgba(133, 133, 133, 0.661);

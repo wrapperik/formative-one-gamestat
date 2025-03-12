@@ -10,7 +10,7 @@ function Searchbar() {
   </g>
   </svg>
 
-  <input placeholder="Search" type="search" className="input"></input>
+  <input placeholder="Search for your favourite game..." type="search" className="input"></input>
     </div>);
 }
 

@@ -1,5 +1,6 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import '../App.css';
 import '../Styles/compare.css';
 import GameRatingChart from './GameRatingChart';
@@ -24,23 +25,31 @@ function Compare() {
           <div className="card mt-3">
             <div className="card-body">
               <h5 className="card-title">Gameplay Screenshots</h5>
-              <div id="carouselExampleIndicators" className="carousel slide" data-bs-ride="carousel">
+              <div id="carouselExampleIndicators1" className="carousel slide" data-bs-ride="carousel">
+                <div className="carousel-indicators">
+                  <button type="button" data-bs-target="#carouselExampleIndicators1" data-bs-slide-to="0" className="active" aria-current="true" aria-label="Slide 1"></button>
+                  <button type="button" data-bs-target="#carouselExampleIndicators1" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                  <button type="button" data-bs-target="#carouselExampleIndicators1" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                </div>
                 <div className="carousel-inner">
                   <div className="carousel-item active">
-                    <img src="https://via.placeholder.com/200" className="d-block w-100" alt="gameplay 1" />
+                    <img src="/images/fortnite_1.jpg" className="d-block w-100" alt="Slide 1" />
                   </div>
                   <div className="carousel-item">
-                    <img src="https://via.placeholder.com/200" className="d-block w-100" alt="gameplay 2" />
+                    <img src="/images/fortnite_2.jpg" className="d-block w-100" alt="Slide 2" />
+                  </div>
+                  <div className="carousel-item">
+                    <img src="/images/fortnite_3.jpeg" className="d-block w-100" alt="Slide 3" />
                   </div>
                 </div>
-                <a className="carousel-control-prev" href="#carouselExampleControls1" role="button" data-slide="prev">
+                <button className="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators1" data-bs-slide="prev">
                   <span className="carousel-control-prev-icon" aria-hidden="true"></span>
-                  <span className="sr-only">Previous</span>
-                </a>
-                <a className="carousel-control-next" href="#carouselExampleControls1" role="button" data-slide="next">
+                  <span className="visually-hidden">Previous</span>
+                </button>
+                <button className="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators1" data-bs-slide="next">
                   <span className="carousel-control-next-icon" aria-hidden="true"></span>
-                  <span className="sr-only">Next</span>
-                </a>
+                  <span className="visually-hidden">Next</span>
+                </button>
               </div>
             </div>
           </div>
@@ -59,28 +68,37 @@ function Compare() {
           <div className="card mt-3">
             <div className="card-body">
               <h5 className="card-title">Gameplay Screenshots</h5>
-              <div id="carouselExampleIndicators" className="carousel slide" data-bs-ride="carousel">
+              <div id="carouselExampleIndicators2" className="carousel slide" data-bs-ride="carousel">
+                <div className="carousel-indicators">
+                  <button type="button" data-bs-target="#carouselExampleIndicators2" data-bs-slide-to="0" className="active" aria-current="true" aria-label="Slide 1"></button>
+                  <button type="button" data-bs-target="#carouselExampleIndicators2" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                  <button type="button" data-bs-target="#carouselExampleIndicators2" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                </div>
                 <div className="carousel-inner">
                   <div className="carousel-item active">
-                    <img src="https://via.placeholder.com/200" className="d-block w-100" alt="gameplay 1" />
+                    <img src="/images/PUBG_3.jpg" className="d-block w-100" alt="Slide 1" />
                   </div>
                   <div className="carousel-item">
-                    <img src="https://via.placeholder.com/200" className="d-block w-100" alt="gameplay 2" />
+                    <img src="/images/PUBG.jpeg" className="d-block w-100" alt="Slide 2" />
+                  </div>
+                  <div className="carousel-item">
+                    <img src="/images/PUBG2.jpeg" className="d-block w-100" alt="Slide 3" />
                   </div>
                 </div>
-                <a className="carousel-control-prev" href="#carouselExampleControls2" role="button" data-slide="prev">
+                <button className="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators2" data-bs-slide="prev">
                   <span className="carousel-control-prev-icon" aria-hidden="true"></span>
-                  <span className="sr-only">Previous</span>
-                </a>
-                <a className="carousel-control-next" href="#carouselExampleControls2" role="button" data-slide="next">
+                  <span className="visually-hidden">Previous</span>
+                </button>
+                <button className="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators2" data-bs-slide="next">
                   <span className="carousel-control-next-icon" aria-hidden="true"></span>
-                  <span className="sr-only">Next</span>
-                </a>
+                  <span className="visually-hidden">Next</span>
+                </button>
               </div>
             </div>
           </div>
         </div>
       </div>
+      
       <GameRatingChart />
       <div className="row compare-content">
         <div className="col-md-6 compare-item">
