@@ -12,9 +12,9 @@ const PlatformPieChart = () => {
         label: 'Platform Distribution',
         data: [1, 1, 1, 0],
         backgroundColor: [
-          'rgb(44, 165, 0)',
+          'rgb(64, 0, 255)',
           'rgb(54, 162, 235)',
-          'rgb(90, 90, 90)',
+          'rgb(0, 157, 255)',
           'rgb(0, 114, 140)',
         ],
         hoverOffset: 4
