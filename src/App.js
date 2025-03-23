@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
@@ -11,7 +11,10 @@ import Footer from './Components/Footer';
 
 
 
+
 function App() {
+  const [selectedGame, setSelectedGame] = useState(null);
+  
   return (
     <Router>
       <div className="App">
