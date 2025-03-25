@@ -17,6 +17,13 @@ html, body {
   box-sizing: border-box;
 }
 
+.searchContainer{
+  width: 700px;
+ position: absolute;
+  top: 35%;
+  left: 32%;
+}
+
 .App {
   display: flex;
   flex-direction: column;

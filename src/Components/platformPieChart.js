@@ -1,24 +1,40 @@
 import React, { useEffect, useRef } from 'react';
 import { Chart } from 'chart.js/auto';
 
-const PlatformPieChart = () => {
+const PlatformPieChart = ({ platforms }) => {
   const chartRef = useRef(null);
   const chartInstanceRef = useRef(null);
 
   useEffect(() => {
+    // Destroy the previous chart instance if it exists
+    if (chartInstanceRef.current) {
+      chartInstanceRef.current.destroy();
+    }
+
+    // Process platform data
+    const platformCounts = platforms.reduce((acc, platform) => {
+      const platformName = platform.platform.name;
+      acc[platformName] = (acc[platformName] || 0) + 1;
+      return acc;
+    }, {});
+
     const data = {
-      labels: ['Xbox', 'Playstation', 'PC', 'Mobile'],
-      datasets: [{
-        label: 'Platform Distribution',
-        data: [1, 1, 1, 0],
-        backgroundColor: [
-          'rgb(64, 0, 255)',
-          'rgb(54, 162, 235)',
-          'rgb(0, 157, 255)',
-          'rgb(0, 114, 140)',
-        ],
-        hoverOffset: 4
-      }]
+      labels: Object.keys(platformCounts),
+      datasets: [
+        {
+          label: 'Platform Distribution',
+          data: Object.values(platformCounts),
+          backgroundColor: [
+            'rgb(64, 0, 255)',
+            'rgb(54, 162, 235)',
+            'rgb(0, 157, 255)',
+            'rgb(0, 114, 140)',
+            'rgb(255, 99, 132)',
+            'rgb(255, 205, 86)',
+          ],
+          hoverOffset: 4,
+        },
+      ],
     };
 
     const config = {
@@ -33,12 +49,13 @@ const PlatformPieChart = () => {
     const ctx = chartRef.current.getContext('2d');
     chartInstanceRef.current = new Chart(ctx, config);
 
+    // Cleanup function to destroy the chart instance
     return () => {
       if (chartInstanceRef.current) {
         chartInstanceRef.current.destroy();
       }
     };
-  }, []);
+  }, [platforms]); // Re-run effect when platforms change
 
   return (
     <div className="card mt-3">

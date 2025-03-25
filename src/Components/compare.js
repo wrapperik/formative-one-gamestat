@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
+import { GlobalStateContext } from '../Context/GlobalStateContext';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import '../App.css';
@@ -8,8 +9,7 @@ import PlatformPieChart from './platformPieChart';
 import Searchbar from './searchbar';
 
 function Compare() {
-  const [selectedGame1, setSelectedGame1] = useState(null);
-  const [selectedGame2, setSelectedGame2] = useState(null);
+  const { selectedGame1, setSelectedGame1, selectedGame2, setSelectedGame2 } = useContext(GlobalStateContext); // Use global state
 
   const handleGameSelect1 = (game) => {
     setSelectedGame1(game);
@@ -122,13 +122,18 @@ function Compare() {
         </div>
       </div>
 
-      <GameRatingChart />
+      <GameRatingChart 
+        game1={selectedGame1 ? selectedGame1.name : 'Game 1'} 
+        game2={selectedGame2 ? selectedGame2.name : 'Game 2'} 
+        rating1={selectedGame1 ? selectedGame1.rating : 0} 
+        rating2={selectedGame2 ? selectedGame2.rating : 0} 
+      />
       <div className="row compare-content">
         <div className="col-md-6 compare-item">
-          <PlatformPieChart />
+          <PlatformPieChart platforms={selectedGame1 ? selectedGame1.platforms : []} />
         </div>
         <div className="col-md-6 compare-item">
-          <PlatformPieChart />
+          <PlatformPieChart platforms={selectedGame2 ? selectedGame2.platforms : []} />
         </div>
       </div>
     </div>
