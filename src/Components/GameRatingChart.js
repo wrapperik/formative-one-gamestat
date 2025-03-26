@@ -8,20 +8,18 @@ const GameRatingChart = ({ game1, game2, rating1, rating2 }) => {
   useEffect(() => {
     const ctx = chartRef.current.getContext('2d');
 
-    // Destroy the previous chart instance if it exists
     if (chartInstanceRef.current) {
       chartInstanceRef.current.destroy();
     }
 
-    // Create a new chart instance
     chartInstanceRef.current = new Chart(ctx, {
       type: 'bar',
       data: {
-        labels: [game1, game2], // Game names
+        labels: [game1, game2], 
         datasets: [
           {
             label: 'Game Rating',
-            data: [rating1, rating2], // Ratings
+            data: [rating1, rating2], 
             backgroundColor: [
               'rgba(75, 192, 192, 0.2)',
               'rgba(255, 99, 132, 0.2)',
@@ -67,13 +65,12 @@ const GameRatingChart = ({ game1, game2, rating1, rating2 }) => {
       },
     });
 
-    // Cleanup function to destroy the chart instance
     return () => {
       if (chartInstanceRef.current) {
         chartInstanceRef.current.destroy();
       }
     };
-  }, [game1, game2, rating1, rating2]); // Re-run effect when props change
+  }, [game1, game2, rating1, rating2]);
 
   return (
     <div className="ratingChart mt-3">

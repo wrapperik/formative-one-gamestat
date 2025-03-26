@@ -1,15 +1,14 @@
 import React, { useContext } from 'react';
-import { useNavigate } from 'react-router-dom'; // Import useNavigate
-import { GlobalStateContext } from '../Context/GlobalStateContext'; // Import GlobalStateContext
+import { useNavigate } from 'react-router-dom'; 
+import { GlobalStateContext } from '../Context/GlobalStateContext'; 
 import Searchbar from './searchbar';
 
 function Home() {
-  const { setSelectedGame } = useContext(GlobalStateContext); // Access setSelectedGame from context
-  const navigate = useNavigate(); // Initialize useNavigate
-
+  const { setSelectedGame } = useContext(GlobalStateContext); 
+  const navigate = useNavigate(); 
   const handleGameSelect = (game) => {
-    setSelectedGame(game); // Set the selected game in global state
-    navigate('/timeline'); // Navigate to the Timeline page
+    setSelectedGame(game); 
+    navigate('/timeline'); 
   };
 
   return (

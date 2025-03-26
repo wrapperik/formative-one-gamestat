@@ -8,11 +8,11 @@ import Compare from './Components/compare';
 import Home from './Components/home';
 import Timeline from './Components/timeline';
 import Footer from './Components/Footer';
-import { GlobalStateProvider } from './Context/GlobalStateContext'; // Import the GlobalStateProvider
+import { GlobalStateProvider } from './Context/GlobalStateContext'; 
 
 function App() {
   return (
-    <GlobalStateProvider> {/* Wrap the app with GlobalStateProvider */}
+    <GlobalStateProvider>
       <Router>
         <div className="App">
           <header className="App-header">

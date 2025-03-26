@@ -19,9 +19,9 @@ function Searchbar({ onGameSelect }) {
 
   const handleGameClick = (game) => {
     if (onGameSelect) {
-      onGameSelect(game); // Use the passed prop to handle game selection
+      onGameSelect(game); 
     }
-    setResults([]); // Clear the results to hide the dropdown
+    setResults([]); 
 
   };
 

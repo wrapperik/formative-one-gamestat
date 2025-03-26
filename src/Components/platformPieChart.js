@@ -6,12 +6,12 @@ const PlatformPieChart = ({ platforms }) => {
   const chartInstanceRef = useRef(null);
 
   useEffect(() => {
-    // Destroy the previous chart instance if it exists
+    
     if (chartInstanceRef.current) {
       chartInstanceRef.current.destroy();
     }
 
-    // Process platform data
+    
     const platformCounts = platforms.reduce((acc, platform) => {
       const platformName = platform.platform.name;
       acc[platformName] = (acc[platformName] || 0) + 1;
@@ -49,13 +49,13 @@ const PlatformPieChart = ({ platforms }) => {
     const ctx = chartRef.current.getContext('2d');
     chartInstanceRef.current = new Chart(ctx, config);
 
-    // Cleanup function to destroy the chart instance
+   
     return () => {
       if (chartInstanceRef.current) {
         chartInstanceRef.current.destroy();
       }
     };
-  }, [platforms]); // Re-run effect when platforms change
+  }, [platforms]); 
 
   return (
     <div className="card mt-3">

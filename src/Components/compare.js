@@ -9,8 +9,8 @@ import PlatformPieChart from './platformPieChart';
 import Searchbar from './searchbar';
 
 function Compare() {
-  const { selectedGame1, setSelectedGame1, selectedGame2, setSelectedGame2 } = useContext(GlobalStateContext); // Use global state
-
+  const { selectedGame1, setSelectedGame1, selectedGame2, setSelectedGame2 } = useContext(GlobalStateContext); 
+  
   const handleGameSelect1 = (game) => {
     setSelectedGame1(game);
   };
@@ -45,7 +45,7 @@ function Compare() {
             <div className="card-body">
               <h5 className="card-title">Gameplay Screenshots</h5>
               {selectedGame1 && selectedGame1.short_screenshots ? (
-                <div id="carouselExampleIndicators1" className="carousel slide" data-bs-ride="carousel">
+                <div id="carouselIndicators" className="carousel slide" data-bs-ride="carousel">
                   <div className="carousel-inner">
                     {selectedGame1.short_screenshots.map((screenshot, index) => (
                       <div
@@ -56,11 +56,11 @@ function Compare() {
                       </div>
                     ))}
                   </div>
-                  <button className="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators1" data-bs-slide="prev">
+                  <button className="carousel-control-prev" type="button" data-bs-target="#carouselIndicators" data-bs-slide="prev">
                     <span className="carousel-control-prev-icon" aria-hidden="true"></span>
                     <span className="visually-hidden">Previous</span>
                   </button>
-                  <button className="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators1" data-bs-slide="next">
+                  <button className="carousel-control-next" type="button" data-bs-target="#carouselIndicators" data-bs-slide="next">
                     <span className="carousel-control-next-icon" aria-hidden="true"></span>
                     <span className="visually-hidden">Next</span>
                   </button>
@@ -94,7 +94,7 @@ function Compare() {
             <div className="card-body">
               <h5 className="card-title">Gameplay Screenshots</h5>
               {selectedGame2 && selectedGame2.short_screenshots ? (
-                <div id="carouselExampleIndicators2" className="carousel slide" data-bs-ride="carousel">
+                <div id="carouselIndicators" className="carousel slide" data-bs-ride="carousel">
                   <div className="carousel-inner">
                     {selectedGame2.short_screenshots.map((screenshot, index) => (
                       <div

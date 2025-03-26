@@ -18,7 +18,7 @@ export const GlobalStateProvider = ({ children }) => {
     ],
   });
 
-  // Add states for Compare.js
+
   const [selectedGame1, setSelectedGame1] = useState(null);
   const [selectedGame2, setSelectedGame2] = useState(null);
 
