@@ -24,6 +24,11 @@ html, body {
   left: 32%;
 }
 
+.searchContainer img{
+  width: 250px;
+  margin-bottom: 20px;
+}
+
 .App {
   display: flex;
   flex-direction: column;

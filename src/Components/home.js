@@ -3,6 +3,8 @@ import { useNavigate } from 'react-router-dom';
 import { GlobalStateContext } from '../Context/GlobalStateContext'; 
 import Searchbar from './searchbar';
 
+
+
 function Home() {
   const { setSelectedGame } = useContext(GlobalStateContext); 
   const navigate = useNavigate(); 
@@ -13,6 +15,7 @@ function Home() {
 
   return (
     <div className="searchContainer">
+      <img src="logo-white.png" />
       <Searchbar onGameSelect={handleGameSelect} /> 
     </div>
   );

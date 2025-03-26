@@ -19,7 +19,7 @@ const Footer = () => {
             <p>The ultimate platform for gamers and developers to explore, compare, and analyse game data like never before. Whether you’re a casual player searching for your next favourite title or a developer studying industry trends, we provide the tools you need to dive deep into the gaming world.</p>
           </div>
           <div className="footer-column">
-            <p>With our powerful comparison features, you can stack games side by side—breaking down genres, mechanics, reviews, and technical specs—all in one place. Our extensive database keeps you updated with the latest releases, industry insights, and historical data to help you make informed decisions.</p>
+            <p>With our powerful comparison features, you can stack games side by side—breaking down genres, reviews, and available platforms in one place. Our extensive database keeps you updated with the latest releases, industry insights, and historical data to help you make informed decisions.</p>
           </div>
           <div className="footer-column">
             <p>Join a growing community of gaming enthusiasts and professionals who are passionate about understanding and shaping the future of interactive entertainment. Start exploring today!</p>

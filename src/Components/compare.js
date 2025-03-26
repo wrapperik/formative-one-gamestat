@@ -94,7 +94,7 @@ function Compare() {
             <div className="card-body">
               <h5 className="card-title">Gameplay Screenshots</h5>
               {selectedGame2 && selectedGame2.short_screenshots ? (
-                <div id="carouselIndicators" className="carousel slide" data-bs-ride="carousel">
+                <div id="carouselIndicators2" className="carousel slide" data-bs-ride="carousel">
                   <div className="carousel-inner">
                     {selectedGame2.short_screenshots.map((screenshot, index) => (
                       <div
@@ -105,11 +105,11 @@ function Compare() {
                       </div>
                     ))}
                   </div>
-                  <button className="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators2" data-bs-slide="prev">
+                  <button className="carousel-control-prev" type="button" data-bs-target="#carouselIndicators2" data-bs-slide="prev">
                     <span className="carousel-control-prev-icon" aria-hidden="true"></span>
                     <span className="visually-hidden">Previous</span>
                   </button>
-                  <button className="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators2" data-bs-slide="next">
+                  <button className="carousel-control-next" type="button" data-bs-target="#carouselIndicators2" data-bs-slide="next">
                     <span className="carousel-control-next-icon" aria-hidden="true"></span>
                     <span className="visually-hidden">Next</span>
                   </button>

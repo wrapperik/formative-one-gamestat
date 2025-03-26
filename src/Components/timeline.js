@@ -119,14 +119,14 @@ const Timeline = () => {
           </div>
 
           <div className="timeline-carousel">
-            <div id="carouselExampleIndicators" className="carousel slide" data-bs-ride="carousel">
+            <div id="carouselIndicators" className="carousel slide" data-bs-ride="carousel">
               <div className="carousel-indicators">
                 {selectedGame && selectedGame.short_screenshots
                   ? selectedGame.short_screenshots.map((_, index) => (
                       <button
                         key={index}
                         type="button"
-                        data-bs-target="#carouselExampleIndicators"
+                        data-bs-target="#carouselIndicators"
                         data-bs-slide-to={index}
                         className={index === 0 ? 'active' : ''}
                         aria-current={index === 0 ? 'true' : 'false'}
@@ -149,12 +149,12 @@ const Timeline = () => {
                         />
                       </div>
                     ))
-                  : <p>No screenshots available.</p>}
+                  : null}
               </div>
               <button
                 className="carousel-control-prev"
                 type="button"
-                data-bs-target="#carouselExampleIndicators"
+                data-bs-target="#carouselIndicators"
                 data-bs-slide="prev"
               >
                 <span className="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -163,7 +163,7 @@ const Timeline = () => {
               <button
                 className="carousel-control-next"
                 type="button"
-                data-bs-target="#carouselExampleIndicators"
+                data-bs-target="#carouselIndicators"
                 data-bs-slide="next"
               >
                 <span className="carousel-control-next-icon" aria-hidden="true"></span>

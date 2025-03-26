@@ -1,7 +1,11 @@
-# Game Comparison App
+
+![Logo](./public/favicon.png)
+
+
+# Gamestat | Game Comparison
 
 ## Overview
-The Game Comparison App is a clean and user-friendly application that allows users to compare different games based on various factors such as price, ratings, platform availability, and features. Designed with a minimalist UI, the app provides a seamless experience for gamers looking to make informed decisions about their next purchase.
+Gamestat is a clean and user-friendly application that allows users to compare different games based on various factors such as price, ratings, platform availability, and features. Designed with a minimalist UI, the app provides a seamless experience for gamers looking to make informed decisions about their next purchase.
 
 ## Features
 - Compare multiple games side by side
@@ -34,5 +38,12 @@ The app was developed with a focus on simplicity, efficiency, and user experienc
 
 
 ---
-Enjoy using the Game Comparison App!
+Enjoy using Gamestat!
+
+
+
+
+## Screenshots
+
+![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
 
