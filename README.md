@@ -45,5 +45,7 @@ Enjoy using Gamestat!
 
 ## Screenshots
 
-![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
+![App Screenshot](./public/sc-home.png)
+![App Screenshot](./public/sc-compare.png)
+![App Screenshot](./public/sc-timeline.png)
 
