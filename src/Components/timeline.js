@@ -108,7 +108,7 @@ const Timeline = () => {
                 <p>{selectedGame.name || 'Unknown'}</p>
                 <h4>Platforms:</h4>
                 <p>{selectedGame.platforms.map((p) => p.platform.name).join(', ')}</p>
-                <h4>Age Rating:</h4>
+                <h4>Rating:</h4>
                 <p>{selectedGame.rating || 'Unknown'}</p>
                 <h4>Genre:</h4>
                 <p>{selectedGame.genres.map((g) => g.name).join(', ')}</p>
