@@ -1,5 +1,5 @@
 
-![Logo](./public/favicon.png)
+<img src="./public/favicon.png" alt="Logo" width="100" height="100">
 
 
 # Gamestat | Game Comparison
