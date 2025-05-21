@@ -37,8 +37,7 @@ Main components include:
 * `App.js`: Sets up routing between pages
 * `Home.js`: Displays a list of top games using cards
 * `Timeline.js`: Displays data for individual games and visualizes their release dates in a timeline format
-* `ComparePage.js`: Allows users to select and compare two different games
-* `GameCard.js`: Reusable component for showing game info
+* `Compare.js`: Allows users to select and compare two different games
 
 ## Assumptions & Limitations
 
