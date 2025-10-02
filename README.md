@@ -49,3 +49,26 @@ Enjoy using Gamestat!
 ![App Screenshot](./public/sc-compare.png)
 ![App Screenshot](./public/sc-timeline.png)
 
+## Deploy to Heroku
+
+Quick steps to deploy this app to Heroku from your machine:
+
+1. Install the Heroku CLI: https://devcenter.heroku.com/articles/heroku-cli
+2. Login to Heroku in your terminal:
+
+   heroku login
+
+3. Create a new Heroku app (or use an existing name):
+
+   heroku create your-app-name
+
+4. Push to Heroku (this repo's main branch):
+
+   git push heroku main
+
+Notes:
+- This project uses a small Express server (`server.js`) and a `Procfile` so Heroku will run `node server.js` after build.
+- We added an `engines` entry in `package.json` to request Node 18 on Heroku and a `heroku-postbuild` script to build the React app.
+- If your app doesn't build on Heroku, try setting the buildpack or checking the Node/npm versions.
+
+
