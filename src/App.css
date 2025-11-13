@@ -19,9 +19,23 @@ html, body {
 
 .searchContainer{
   width: 700px;
- position: absolute;
+  position: absolute;
   top: 35%;
-  left: 32%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+@media (min-width: 769px) {
+  .searchContainer {
+    left: calc(50% + 125px);
+  }
+}
+
+@media (max-width: 768px) {
+  .searchContainer {
+    width: 90%;
+    left: 50%;
+  }
 }
 
 .searchContainer img{
@@ -35,6 +49,14 @@ html, body {
   min-height: 100vh;
   text-align: center;
   width: 100%;
+  margin-left: 250px;
+  transition: margin-left 0.3s ease;
+}
+
+@media (max-width: 768px) {
+  .App {
+    margin-left: 0;
+  }
 }
 
 .App-logo {
