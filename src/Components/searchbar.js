@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import '../Styles/searchbar.css';
 
 function Searchbar({ onGameSelect }) {
   const [query, setQuery] = useState('');
@@ -22,13 +21,12 @@ function Searchbar({ onGameSelect }) {
       onGameSelect(game); 
     }
     setResults([]); 
-
   };
 
   return (
-    <div>
-      <div className="group">
-        <svg className="icon" aria-hidden="true" viewBox="0 0 24 24">
+    <div className="relative">
+      <div className="group relative">
+        <svg className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 fill-gray-400 transition-all group-hover:fill-white" aria-hidden="true" viewBox="0 0 24 24">
           <g>
             <path d="M21.53 20.47l-3.66-3.66C19.195 15.24 20 13.214 20 11c0-4.97-4.03-9-9-9s-9 4.03-9 9 4.03 9 9 9c2.215 0 4.24-.804 5.808-2.13l3.66 3.66c.147.146.34.22.53.22s.385-.073.53-.22c.295-.293.295-.767.002-1.06zM3.5 11c0-4.135 3.365-7.5 7.5-7.5s7.5 3.365 7.5 7.5-3.365 7.5-7.5 7.5-7.5-3.365-7.5-7.5z"></path>
           </g>
@@ -36,19 +34,19 @@ function Searchbar({ onGameSelect }) {
         <input
           placeholder="Search for your favourite game..."
           type="search"
-          className="input"
+          className="w-full h-10 pl-12 pr-4 rounded-lg border border-gray-600 bg-gray-800/50 text-white placeholder-gray-400 outline-none transition-all focus:border-accent-blue focus:bg-gray-800"
           value={query}
           onChange={handleSearch}
         />
       </div>
       {results.length > 0 && (
-        <div className="results">
+        <div className="absolute z-10 w-full mt-2 max-h-96 overflow-y-auto bg-gray-800 border border-gray-600 rounded-lg shadow-lg">
           {results.map((game) => (
-            <div key={game.id} className="result-item" onClick={() => handleGameClick(game)}>
-              <img src={game.background_image} alt={game.name} className="result-image" />
-              <div className="result-info">
-                <h3>{game.name}</h3>
-                <p>Released: {game.released}</p>
+            <div key={game.id} className="flex items-center gap-4 p-3 cursor-pointer hover:bg-gray-700 transition-colors border-b border-gray-700 last:border-b-0" onClick={() => handleGameClick(game)}>
+              <img src={game.background_image} alt={game.name} className="w-20 h-20 object-cover rounded-lg" />
+              <div className="flex-1">
+                <h3 className="font-semibold text-white">{game.name}</h3>
+                <p className="text-sm text-gray-400">Released: {game.released}</p>
               </div>
             </div>
           ))}

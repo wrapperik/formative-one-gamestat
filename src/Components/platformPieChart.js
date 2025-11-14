@@ -58,10 +58,10 @@ const PlatformPieChart = ({ platforms }) => {
   }, [platforms]); 
 
   return (
-    <div className="card mt-3">
-      <div className="card-body">
-        <h5 className="card-title">Platform Distribution</h5>
-        <div style={{ position: 'relative', height: '300px', width: '100%' }}>
+    <div className="bg-gradient-to-t from-secondary-dark to-black/50 text-white rounded-3xl border border-gray-400/40 p-5 mt-3">
+      <div className="p-5">
+        <h5 className="text-lg font-semibold mb-4">Platform Distribution</h5>
+        <div className="relative h-[300px] w-full">
           <canvas ref={chartRef} />
         </div>
       </div>

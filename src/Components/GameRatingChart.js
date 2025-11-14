@@ -73,9 +73,9 @@ const GameRatingChart = ({ game1, game2, rating1, rating2 }) => {
   }, [game1, game2, rating1, rating2]);
 
   return (
-    <div className="ratingChart mt-3">
-      <div className="card-body">
-        <h5 className="card-title">Game Rating</h5>
+    <div className="w-[78%] bg-gradient-to-t from-secondary-dark to-black/50 text-white rounded-3xl border border-gray-400/40 p-5 mt-3 max-md:w-full">
+      <div className="p-5">
+        <h5 className="text-lg font-semibold mb-4">Game Rating</h5>
         <canvas ref={chartRef} />
       </div>
     </div>
