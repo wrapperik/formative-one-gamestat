@@ -3,10 +3,7 @@ html, body {
   padding: 0;
   width: 100%;
   height: 100%;
-  background: radial-gradient(ellipse at top, #1b2838 0%, #171a21 50%, #0e1116 100%);
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
+  background: #0e1116;
   overscroll-behavior: none;
   overflow-x: hidden;
 }
@@ -14,6 +11,7 @@ html, body {
 #root {
   overflow-x: hidden;
   max-width: 100vw;
+  position: relative;
 }
 
 .searchContainer {
@@ -41,6 +39,8 @@ html, body {
   overflow-x: hidden;
   max-width: 100vw;
   transition: margin-left 0.3s ease-in-out;
+  background: radial-gradient(ellipse at top, #1b2838 0%, #171a21 50%, #0e1116 100%);
+  position: relative;
 }
 
 .App-header {

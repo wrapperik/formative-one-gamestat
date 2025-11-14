@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faHome, faChartBar, faClock, faBars, faTimes, faGamepad } from '@fortawesome/free-solid-svg-icons';
+import { faHome, faChartBar, faInfoCircle, faBars, faTimes, faGamepad } from '@fortawesome/free-solid-svg-icons';
 
 function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -13,7 +13,7 @@ function Navbar() {
   const navItems = [
     { path: '/', label: 'Home', icon: faHome },
     { path: '/compare', label: 'Compare', icon: faChartBar },
-    { path: '/timeline', label: 'Timeline', icon: faClock }
+    { path: '/timeline', label: 'Game Detail', icon: faInfoCircle }
   ];
 
   return (
@@ -21,7 +21,7 @@ function Navbar() {
       <nav className={`fixed left-0 top-0 h-screen w-[250px] bg-[#171d25]/95 backdrop-blur-md !border-r !border-[#3c4f62]/15 shadow-[2px_0_10px_rgba(0,0,0,0.5)] flex flex-col py-8 z-[998] transition-transform duration-300 ease-[cubic-bezier(0.4,0,0.2,1)] md:translate-x-0 ${menuOpen ? 'translate-x-0' : '-translate-x-full'} md:w-[250px] max-md:w-[280px] max-md:bg-primary-dark/95`}>
         <div className="px-8 mb-12 flex items-center gap-1">
           <img src="/gs-logo.png" alt="GameStat Logo" className="w-14 h-14 drop-shadow-[0_0_8px_rgba(102,192,244,0.4)]" />
-          <h2 className="text-white text-2xl font-semibold m-0 tracking-wide drop-shadow-[0_2px_10px_rgba(0,0,0,0.3)]">GameStat</h2>
+          <h2 className="text-white text-2xl font-semibold m-0 tracking-wide drop-shadow-[0_2px_10px_rgba(0,0,0,0.3)]">Gamestat</h2>
         </div>
         
         <ul className="list-none p-0 m-0 flex-1">
@@ -44,7 +44,7 @@ function Navbar() {
         </ul>
 
         <div className="px-8 mt-auto">
-          <p className="text-white/60 text-sm m-0 text-center font-light">Game Analytics Platform</p>
+          <p className="text-white/60 text-sm m-0 text-center font-light">Gamestat 2025</p>
         </div>
       </nav>
 
