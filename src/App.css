@@ -1,64 +1,99 @@
-@layer base {
-  html, body {
-    @apply m-0 p-0 w-full h-full overflow-x-hidden font-inter;
-    background: linear-gradient(135deg, #253a52 0%, #1b2233 100%);
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    overscroll-behavior: none;
-  }
-
-  #root {
-    @apply overflow-x-hidden max-w-[100vw];
-  }
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(ellipse at top, #1b2838 0%, #171a21 50%, #0e1116 100%);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  overscroll-behavior: none;
+  overflow-x: hidden;
 }
 
-@layer components {
-  .searchContainer {
-    @apply w-[700px] absolute top-[35%] left-1/2 -translate-x-1/2;
-  }
+#root {
+  overflow-x: hidden;
+  max-width: 100vw;
+}
 
-  .searchContainer img {
-    @apply w-[250px] mb-5;
-  }
+.searchContainer {
+  width: 800px;
+  max-width: 90vw;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 2rem;
+}
 
-  .App {
-    @apply flex flex-col min-h-screen text-center w-full md:w-[calc(100%-250px)] ml-0 md:ml-[250px] overflow-x-hidden max-w-[100vw] transition-[margin-left] duration-300 ease-in-out;
-  }
+.searchContainer img {
+  width: 320px;
+  max-width: 80%;
+}
 
-  .App-header {
-    @apply flex flex-col items-center justify-center;
-  }
+.App {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  text-align: center;
+  width: 100%;
+  margin-left: 0;
+  overflow-x: hidden;
+  max-width: 100vw;
+  transition: margin-left 0.3s ease-in-out;
+}
 
-  .App-main {
-    @apply flex-1 flex flex-col justify-center items-center;
-  }
+.App-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
 
-  main {
-    @apply overflow-x-hidden w-full max-w-full;
-  }
+.App-main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 
-  .container {
-    @apply max-w-full overflow-x-hidden;
-  }
+main {
+  overflow-x: hidden;
+  width: 100%;
+  max-width: 100%;
+}
 
-  .row {
-    @apply !ml-0 !mr-0 max-w-full;
-  }
+.container {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+.row {
+  margin-left: 0;
+  margin-right: 0;
+  max-width: 100%;
 }
 
 @media (min-width: 769px) {
   .searchContainer {
-    @apply left-[calc(50%+125px)];
+    left: calc(50% + 125px);
+  }
+  
+  .App {
+    margin-left: 250px;
+    width: calc(100% - 250px);
   }
 }
 
 @media (max-width: 768px) {
   .searchContainer {
-    @apply w-[90%] left-1/2;
+    width: 90%;
+    left: 50%;
   }
 
   .App {
-    @apply ml-0 w-full;
+    margin-left: 0;
+    width: 100%;
   }
 }

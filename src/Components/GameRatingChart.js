@@ -21,12 +21,12 @@ const GameRatingChart = ({ game1, game2, rating1, rating2 }) => {
             label: 'Game Rating',
             data: [rating1, rating2], 
             backgroundColor: [
-              'rgba(75, 192, 192, 0.2)',
-              'rgba(255, 99, 132, 0.2)',
+              'rgba(102, 192, 244, 0.3)',
+              'rgba(65, 122, 155, 0.3)',
             ],
             borderColor: [
-              'rgba(75, 192, 192, 1)',
-              'rgba(255, 99, 132, 1)',
+              'rgba(102, 192, 244, 1)',
+              'rgba(65, 122, 155, 1)',
             ],
             borderWidth: 1,
           },
@@ -37,28 +37,50 @@ const GameRatingChart = ({ game1, game2, rating1, rating2 }) => {
         responsive: true,
         plugins: {
           legend: {
-            display: true,
-            position: 'top',
+            display: false,
           },
           tooltip: {
+            backgroundColor: 'rgba(27, 40, 56, 0.95)',
+            titleColor: '#66c0f4',
+            bodyColor: '#ffffff',
+            borderColor: '#3c4f62',
+            borderWidth: 1,
+            padding: 12,
+            displayColors: true,
             callbacks: {
-              label: (context) => `${context.raw} / 5`,
+              label: (context) => `Rating: ${context.raw} / 5`,
             },
           },
         },
         scales: {
           x: {
+            beginAtZero: true,
+            max: 5,
+            grid: {
+              color: 'rgba(60, 79, 98, 0.3)',
+            },
+            ticks: {
+              color: '#8b9bb4',
+            },
             title: {
               display: true,
-              text: 'Games',
+              text: 'Rating (out of 5)',
+              color: '#66c0f4',
+              font: {
+                size: 13,
+                weight: 'bold',
+              },
             },
           },
           y: {
-            beginAtZero: true,
-            max: 5,
-            title: {
-              display: true,
-              text: 'Rating',
+            grid: {
+              color: 'rgba(60, 79, 98, 0.3)',
+            },
+            ticks: {
+              color: '#8b9bb4',
+              font: {
+                size: 12,
+              },
             },
           },
         },
@@ -73,11 +95,9 @@ const GameRatingChart = ({ game1, game2, rating1, rating2 }) => {
   }, [game1, game2, rating1, rating2]);
 
   return (
-    <div className="w-[78%] bg-gradient-to-t from-secondary-dark to-black/50 text-white rounded-3xl border border-gray-400/40 p-5 mt-3 max-md:w-full">
-      <div className="p-5">
-        <h5 className="text-lg font-semibold mb-4">Game Rating</h5>
-        <canvas ref={chartRef} />
-      </div>
+    <div className="w-full bg-gradient-to-br from-[#1b2838] to-[#1e2329] text-white rounded !border !border-[#3c4f62]/20 shadow-steam p-6">
+      <h5 className="text-xl font-bold mb-6 text-white">Game Rating Comparison</h5>
+      <canvas ref={chartRef} />
     </div>
   );
 };

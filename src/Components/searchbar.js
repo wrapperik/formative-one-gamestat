@@ -34,19 +34,19 @@ function Searchbar({ onGameSelect }) {
         <input
           placeholder="Search for your favourite game..."
           type="search"
-          className="w-full h-10 pl-12 pr-4 rounded-lg border border-gray-600 bg-gray-800/50 text-white placeholder-gray-400 outline-none transition-all focus:border-accent-blue focus:bg-gray-800"
+          className="w-full h-12 pl-12 pr-4 rounded bg-[#1b2838] !border !border-[#3c4f62]/20 text-white placeholder-[#8b9bb4] outline-none transition-all duration-200 focus:!border-[#66c0f4]/60 focus:bg-[#1e2329] focus:shadow-[0_0_10px_rgba(102,192,244,0.2)]"
           value={query}
           onChange={handleSearch}
         />
       </div>
       {results.length > 0 && (
-        <div className="absolute z-10 w-full mt-2 max-h-96 overflow-y-auto bg-gray-800 border border-gray-600 rounded-lg shadow-lg">
+        <div className="absolute z-10 w-full mt-2 max-h-96 overflow-y-auto bg-[#1b2838] !border !border-[#3c4f62]/20 rounded shadow-steam">
           {results.map((game) => (
-            <div key={game.id} className="flex items-center gap-4 p-3 cursor-pointer hover:bg-gray-700 transition-colors border-b border-gray-700 last:border-b-0" onClick={() => handleGameClick(game)}>
-              <img src={game.background_image} alt={game.name} className="w-20 h-20 object-cover rounded-lg" />
+            <div key={game.id} className="flex items-center gap-4 p-3 cursor-pointer hover:bg-[#2a3f5f]/50 transition-all duration-200 !border-b !border-[#3c4f62]/30 last:border-b-0" onClick={() => handleGameClick(game)}>
+              <img src={game.background_image} alt={game.name} className="w-20 h-20 object-cover rounded" />
               <div className="flex-1">
                 <h3 className="font-semibold text-white">{game.name}</h3>
-                <p className="text-sm text-gray-400">Released: {game.released}</p>
+                <p className="text-sm text-[#8b9bb4]">Released: {game.released}</p>
               </div>
             </div>
           ))}

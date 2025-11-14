@@ -25,9 +25,9 @@ const PlatformPieChart = ({ platforms }) => {
           label: 'Platform Distribution',
           data: Object.values(platformCounts),
           backgroundColor: [
-            'rgb(64, 0, 255)',
-            'rgb(54, 162, 235)',
-            'rgb(0, 157, 255)',
+            'rgb(102, 192, 244)',
+            'rgb(65, 122, 155)',
+            'rgb(42, 63, 95)',
             'rgb(0, 114, 140)',
             'rgb(255, 99, 132)',
             'rgb(255, 205, 86)',
@@ -43,6 +43,26 @@ const PlatformPieChart = ({ platforms }) => {
       options: {
         responsive: true,
         maintainAspectRatio: false,
+        plugins: {
+          legend: {
+            position: 'bottom',
+            labels: {
+              color: '#8b9bb4',
+              padding: 15,
+              font: {
+                size: 12,
+              },
+            },
+          },
+          tooltip: {
+            backgroundColor: 'rgba(27, 40, 56, 0.95)',
+            titleColor: '#66c0f4',
+            bodyColor: '#ffffff',
+            borderColor: '#3c4f62',
+            borderWidth: 1,
+            padding: 12,
+          },
+        },
       },
     };
 
@@ -58,12 +78,10 @@ const PlatformPieChart = ({ platforms }) => {
   }, [platforms]); 
 
   return (
-    <div className="bg-gradient-to-t from-secondary-dark to-black/50 text-white rounded-3xl border border-gray-400/40 p-5 mt-3">
-      <div className="p-5">
-        <h5 className="text-lg font-semibold mb-4">Platform Distribution</h5>
-        <div className="relative h-[300px] w-full">
-          <canvas ref={chartRef} />
-        </div>
+    <div className="bg-gradient-to-br from-[#1b2838] to-[#1e2329] text-white rounded !border !border-[#3c4f62]/20 shadow-steam p-6">
+      <h5 className="text-xl font-bold mb-6 text-white">Platform Distribution</h5>
+      <div className="relative h-[300px] w-full">
+        <canvas ref={chartRef} />
       </div>
     </div>
   );
