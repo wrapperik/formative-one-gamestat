@@ -8,9 +8,17 @@ function Searchbar({ onGameSelect }) {
     setQuery(e.target.value);
 
     if (e.target.value.length > 2) {
-      const response = await fetch(`https://api.rawg.io/api/games?key=d9acd6ae3c6941cb9d26d2e233eb26c2&search=${e.target.value}`);
-      const data = await response.json();
-      setResults(data.results);
+      try {
+        const response = await fetch(`https://api.rawg.io/api/games?key=d9acd6ae3c6941cb9d26d2e233eb26c2&search=${e.target.value}`);
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        const data = await response.json();
+        setResults(data.results || []);
+      } catch (error) {
+        console.error('Error fetching games:', error);
+        setResults([]);
+      }
     } else {
       setResults([]);
     }
