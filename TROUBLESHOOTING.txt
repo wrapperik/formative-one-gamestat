@@ -1,0 +1,85 @@
+===============================================================================
+DEVELOPMENT SERVER ERROR - TROUBLESHOOTING GUIDE
+===============================================================================
+
+ERROR ENCOUNTERED:
+-----------------
+Error: ECANCELED: operation canceled, read
+  errno: -89,
+  syscall: 'read',
+  code: 'ECANCELED'
+
+When running: npm run dev
+
+
+ROOT CAUSE:
+-----------
+Node.js version mismatch between your local environment and package.json requirements.
+
+- Your local Node version: v18.20.8
+- Package.json required: Node 20.x (for React Router 7.9.x compatibility)
+- React Router 7.9.5+ requires Node >=20.0.0
+
+The ECANCELED error occurs when Node 18 tries to load dependencies that expect
+Node 20+ features, causing file system read operations to fail.
+
+
+HOW IT WAS FIXED:
+-----------------
+1. Removed corrupted node_modules and package-lock.json:
+   rm -rf node_modules package-lock.json
+
+2. Downgraded package.json engines requirement from "20.x" to "18.x" for local development
+
+3. Reinstalled dependencies:
+   npm install
+
+4. Started dev server successfully:
+   npm run dev
+
+
+IMPORTANT NOTES FOR DEPLOYMENT:
+--------------------------------
+⚠️  LOCAL DEV: Currently running with Node 18.x
+⚠️  HEROKU DEPLOYMENT: You MUST use Node 20.x for production deployment
+
+BEFORE DEPLOYING TO HEROKU:
+1. Change package.json engines back to "node": "20.x"
+2. Commit the change
+3. Deploy to Heroku (Heroku will use Node 20.x)
+
+
+RECOMMENDED LONG-TERM SOLUTION:
+--------------------------------
+Upgrade your local Node.js to version 20+ to match production requirements:
+
+Option 1 - Using Homebrew (Mac):
+  brew install node@20
+  brew link node@20
+
+Option 2 - Using NVM (Node Version Manager):
+  nvm install 20
+  nvm use 20
+  nvm alias default 20
+
+Option 3 - Direct Download:
+  Download from: https://nodejs.org/
+  Install Node.js 20.x LTS version
+
+After upgrading to Node 20:
+  1. Change package.json back to "node": "20.x"
+  2. rm -rf node_modules package-lock.json
+  3. npm install
+  4. npm run dev
+
+
+CURRENT STATUS:
+---------------
+✅ Development server working locally with Node 18.x
+⚠️  Remember to change engines to "20.x" before Heroku deployment
+⚠️  React Router may have limited functionality on Node 18.x
+
+
+===============================================================================
+Last Updated: November 16, 2025
+===============================================================================
