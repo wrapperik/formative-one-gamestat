@@ -1,4 +1,4 @@
-![GameStat Banner](./gamestat-banner-readme.png)
+![GameStat Banner](./public/gamestat-banner-readme.png)
 
 # Gamestat | Game Comparison
 
